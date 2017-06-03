@@ -19,15 +19,26 @@
                                     "dataSrc":""
                                     },
                                 "columns":[
-                                    {"data":"id_nicho"},
+                                    {"data":"categoria"},
                                     {"data":"nombre_cuartel"},
-                                    {"data":"categoria"},
-                                    {"data":"categoria"},
-                                    {"data":"categoria"},
-                                    {"data":"categoria"},
-                                    {"data":"categoria"},
-                                    {"data":"categoria"},
-                                    {"defaultContent":"<a  class='tooltip-info' data-toggle='modal' data-target='#VentanaModificarEntidad' data-rel='tooltip' title='View'><span class='gree'> <i class='ace-icon fa fa-pencil-square-o bigger-120'></i> </span></a><a type='button' class='eliminar btn btn-danger btn-xs' data-toggle='modal' data-target='#'><i class='fa fa-trash-o'></i></a>"}
+                                    {"data":"numero_nicho"},
+                                    {"data":"nivel"},
+                                    {"data":"nombre"},
+                                    {"data":"responsable"},
+                                    {"data":"fecha_inicio"},
+                                    {"data":"fecha_final"},
+                                    {"data": "EstadoA", "defaultContent": "<button>Estado</button>", "class": "center","render": function ( data, type, full, meta ) 
+                                        {
+                                          var i=data;
+                                          if(i==1)
+                                          {
+                                            return '<a href="'+data+'"><span class="label label-sm label-success"> Pago</span></a>'  
+                                          }else{
+                                            return '<a href="'+data+'"><span class="label label-sm label-danger"> Vencido</span></a>'  
+                                          }
+                                       }
+                                     },
+                                    {"defaultContent":"<button class='btn btn-xs btn-danger' data-toggle='modal' data-target='#VentanaModificarEntidad' data-rel='tooltip' title='View'><i class='ace-icon fa fa-trash-o bigger-120'></i> </button>"}
 
                                 ],
 
@@ -71,7 +82,7 @@
               "url": base_url+"index.php/Alquiler/get_alquiler",
 							type:"POST",
 							success:function(respuesta){
-								console.log(respuesta);
+								alert(respuesta);
 
 							}
 						});

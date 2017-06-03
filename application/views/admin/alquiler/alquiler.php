@@ -87,14 +87,15 @@
 																			<table id="tabla-alquiler" class="table table-striped table-bordered table-hover">
 																				<thead>
 																					<tr>
+																						<th>Categía</th>
 																						<th>Cuartel</th>
-																						<th>Categoria</th>
+																						<th>Nicho</th>
 																						<th>Nivel</th>
-																						<th>Cuartel</th>
-																						<th>Categoria</th>
-																						<th>Nivel</th>
-																						<th>Categoria</th>
-																						<th>Nivel</th>
+																						<th>Difunto</th>
+																						<th>Responsable</th>
+																						<th>Fecha Incio</th>
+																						<th>Fecha Vencimiento</th>
+																						<th>Estado</th>
 																						<th></th>
 																					</tr>
 																				</thead>
