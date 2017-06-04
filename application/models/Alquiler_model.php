@@ -19,6 +19,26 @@ function get_alquiler(){
 		$consulta = $this->db->get();
 		return $consulta->result();
 	}
+function Get_categoria(){
+		$this->db->select('id_categoria,categoria');
+		$this->db->from('tcategoria');
+		$consulta = $this->db->get();
+		return $consulta->result();
+		}
+function get_cuartel($id_categoria){
+	    $this->db->select('*');
+		$this->db->from('tcuartel');
+		$this->db->where('id_categoria',$id_categoria);
+		$consulta = $this->db->get();
+		return $consulta->result();
+		}
+function get_nicho($id_cuartel){
+				$this->db->select('id_nicho,CONCAT("Nivel",nivel,":",numero_nicho) as nicho');
+				$this->db->from('tnicho');
+				$this->db->where('id_cuartel',$id_cuartel);
+				$consulta = $this->db->get();
+				return $consulta->result();
+			}
 
 
 }

@@ -66,7 +66,7 @@
 											</ul>
 
 											<div class="tab-content">
-											<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalAlquiler">Alquiler</button>
+											<button class="btn btn-sm btn-primary" id="btn_alquiler" data-toggle="modal" data-target="#modalAlquiler">Alquiler</button>
 												<div id="home" class="tab-pane fade in active">
 														<div class="row">
 															<div class="col-xs-12">
@@ -189,8 +189,8 @@
                                       </div>
                                        <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                               <label  for="textbox"><span class="required">Pasaje</span></label>
-                                               <select id="cbPasaje" name="cbxTipologiaInv" class="selectpicker" data-live-search="true"  title="Elija Pasaje"> </select>
+                                               <label  for="textbox"><span class="required">Nicho</span></label>
+                                               <select id="cbNicho" name="cbNicho" class="selectpicker" data-live-search="true"  title="Elija nicho con su nivel"> </select>
                                             </div>
                                       </div>
 

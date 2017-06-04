@@ -1,7 +1,75 @@
  $(document).on("ready" ,function(){
           listaAlquiler();
-          lista();
+
+          //lista();
+          $("#btn_alquiler").click(function(){
+                  get_categoria(); 
+          });
+
+          $("#cbCategoria").change(function(){
+            var categoria=$("#cbCategoria").val();
+              get_cuartel(categoria);
+          });
+          $("#cbCuartel").change(function(){
+            var id_cuartel=$("#cbCuartel").val();
+             get_nicho(id_cuartel);
+          });
+
 			});
+        var get_categoria=function(){
+          html="";
+                    $("#cbCategoria").html(html);
+                    event.preventDefault(); 
+                    $.ajax({
+                        "url":base_url +"index.php/Alquiler/Get_categoria",
+                        type:"POST",
+                        success:function(respuesta){
+                          //alert(respuesta);
+                           var registros = eval(respuesta);
+                            for (var i = 0; i <registros.length;i++) {
+                              html +="<option value="+registros[i]["id_categoria"]+"> "+registros[i]["categoria"]+" </option>";   
+                            };
+                            $("#cbCategoria").html(html);//para modificar las entidades
+                            $('.selectpicker').selectpicker('refresh');     
+                        }
+                    });
+        }
+        var get_cuartel=function(categoria){
+          html="";
+                    $("#cbCuartel").html(html);
+                    event.preventDefault(); 
+                    $.ajax({
+                        "url":base_url +"index.php/Alquiler/get_cuartel",
+                        type:"POST",
+                        data:{categoria:categoria},
+                        success:function(respuesta){
+                           var registros = eval(respuesta);
+                            for (var i = 0; i <registros.length;i++) {
+                              html +="<option value="+registros[i]["id_cuartel"]+"> "+registros[i]["nombre_cuartel"]+" </option>";   
+                            };
+                            $("#cbCuartel").html(html);//para modificar las entidades
+                            $('.selectpicker').selectpicker('refresh'); 
+                        }
+                    });
+        }
+        var  get_nicho=function(id_cuartel){
+                    html="";
+                    $("#cbNicho").html(html);
+                    event.preventDefault(); 
+                    $.ajax({
+                        "url":base_url +"index.php/Alquiler/get_nicho",
+                        type:"POST",
+                        data:{id_cuartel:id_cuartel},
+                        success:function(respuesta){
+                           var registros = eval(respuesta);
+                            for (var i = 0; i <registros.length;i++) {
+                              html +="<option value="+registros[i]["id_nicho"]+"> "+registros[i]["nicho"]+" </option>";   
+                            };
+                            $("#cbNicho").html(html);//para modificar las entidades
+                            $('.selectpicker').selectpicker('refresh');    
+                        }
+                    });
+        }
       var listaAlquiler=function()
                 {
                     var table=$("#tabla-alquiler").DataTable({
@@ -75,7 +143,7 @@
                     }
                 }
 
-     function lista()
+     /*function lista()
 					{
 						event.preventDefault();
 						$.ajax({
@@ -86,4 +154,4 @@
 
 							}
 						});
-					}
+					}*/
