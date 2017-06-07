@@ -1,6 +1,6 @@
  $(document).on("ready" ,function(){
           listaAlquiler();
-
+          $("#erro_alquilerVali").hide();
           //lista();
           $("#btn_alquiler").click(function(){
                   get_categoria(); 
@@ -12,8 +12,44 @@
           });
           $("#cbCuartel").change(function(){
             var id_cuartel=$("#cbCuartel").val();
-             get_nicho(id_cuartel);
+             get_nivel(id_cuartel);
           });
+          $("#cbxNivel").change(function(){
+            var id_cuartel=$("#cbCuartel").val();
+            var nivel=$("#cbxNivel").val();
+             get_nicho(id_cuartel,nivel);
+          });
+
+                //AGREGAR ALQUILER
+                $("#form-addAlquiler").submit(function(event)
+                {
+                    event.preventDefault();
+                    $.ajax({
+                        url:base_url+"index.php/Alquiler/AddAlquiler",
+                        type:$(this).attr('method'),
+                        data:$(this).serialize(),
+                        success:function(respuesta){
+                        
+                    if (respuesta==="exito") {
+                              alert("Los datos han sido guardados correctamente");
+                              $("#erro_alquilerVali").hide();
+                              $("#form-addAlquiler")[0].reset();
+                              swal("REGISTRADO!", resp, "success");
+                              $('#tabla-alquiler').dataTable()._fnAjaxUpdate();    //SIRVE PARA REFRESCAR LA TABLA 
+                        
+                            }
+                            else if(respuesta==="error"){
+                              alert("Los datos no se pudo guardar");
+                            }
+                            else{
+                              $("#erro_alquilerVali").show();
+                            }
+
+                        }
+                    });
+
+                });     
+                //FIN AGREGAR ALQUILER
 
 			});
         var get_categoria=function(){
@@ -43,6 +79,7 @@
                         type:"POST",
                         data:{categoria:categoria},
                         success:function(respuesta){
+                          alert(respuesta);
                            var registros = eval(respuesta);
                             for (var i = 0; i <registros.length;i++) {
                               html +="<option value="+registros[i]["id_cuartel"]+"> "+registros[i]["nombre_cuartel"]+" </option>";   
@@ -52,21 +89,41 @@
                         }
                     });
         }
-        var  get_nicho=function(id_cuartel){
+        var  get_nivel=function(id_cuartel){
+                    html="";
+                    $("#cbxNivel").html(html);
+                    event.preventDefault(); 
+                    $.ajax({
+                        "url":base_url +"index.php/Alquiler/get_nivel",
+                        type:"POST",
+                        data:{id_cuartel:id_cuartel},
+                        success:function(respuesta){
+                          var registros = eval(respuesta);
+                            for (var i = 0; i <registros.length;i++) {
+                              html +="<option value="+registros[i]["nivel"]+"> "+registros[i]["nivel"]+" </option>";   
+                            };
+                            $("#cbxNivel").html(html);//para modificar las entidades
+                            $('.selectpicker').selectpicker('refresh');  
+                       
+                       //alert(respuesta);
+                        }
+                    });
+        }
+        var  get_nicho=function(id_cuartel,nivel){
                     html="";
                     $("#cbNicho").html(html);
                     event.preventDefault(); 
                     $.ajax({
                         "url":base_url +"index.php/Alquiler/get_nicho",
                         type:"POST",
-                        data:{id_cuartel:id_cuartel},
+                        data:{id_cuartel:id_cuartel,nivel:nivel},
                         success:function(respuesta){
                            var registros = eval(respuesta);
                             for (var i = 0; i <registros.length;i++) {
-                              html +="<option value="+registros[i]["id_nicho"]+"> "+registros[i]["nicho"]+" </option>";   
+                              html +="<option value="+registros[i]["id_nicho"]+"> "+registros[i]["numero_nicho"]+" </option>";   
                             };
                             $("#cbNicho").html(html);//para modificar las entidades
-                            $('.selectpicker').selectpicker('refresh');    
+                            $('.selectpicker').selectpicker('refresh'); 
                         }
                     });
         }
@@ -106,7 +163,7 @@
                                           }
                                        }
                                      },
-                                    {"defaultContent":"<button class='btn btn-xs btn-danger' data-toggle='modal' data-target='#VentanaModificarEntidad' data-rel='tooltip' title='View'><i class='ace-icon fa fa-trash-o bigger-120'></i> </button>"}
+                                    {"defaultContent":"<button class='btn btn-xs btn-danger' data-toggle='modal' data-target='#VentanaModificarEntidad' data-rel='tooltip' title='Eliminar'><i class='ace-icon fa fa-trash-o bigger-120'></i> </button> <button class='btn btn-xs btn-info' data-toggle='modal' data-target='#VentanaModificarEntidad' data-rel='tooltip' title='Editar'><i class='ace-icon fa fa-pencil bigger-120'></i> </button>"}
 
                                 ],
 

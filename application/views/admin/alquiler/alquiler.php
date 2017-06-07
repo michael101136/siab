@@ -146,37 +146,42 @@
         <div class="modal-body">
          <div class="row">
             <div class="col-xs-12">
+
+                 <div class="alert alert-danger" id="erro_alquilerVali" style="text-align:left;">
+							  	<strong>¡Importante!</strong> Corregir los siguientes errores.
+							  	<div class="list-errors"></div>
+					</div>
                   <!-- FORULARIO PARA REGISTRAR NUEVO FUNCION  -->
-                <form class="form-horizontal " id="form-addFuncion" action="<?php echo  base_url();?>Funcion/GetFuncion" method="POST">
-                      Datos  de Difunto
+                <form class="form-horizontal " id="form-addAlquiler" action="<?php echo  base_url();?>Alquiler/AddAlquiler" method="POST">
+                      DATOS DEL DIFUNTO
                       <div class="hr hr-1 dotted hr-double"></div>
                       <div class="row">
                                       <div class="col-md-4">
 	                                        <div class="col-md-6 col-sm-6 col-xs-12">
 	                                            <label  for="name">Nombre<span class="required">*</span></label>
-	                                            <input id="txt_nombredifunto" name="txt_nombrefuncion"  type="text">
+	                                            <input id="txt_nombredifunto" name="txt_nombredifunto"  type="text">
 	                                         </div>
                                       </div>
 
                                       <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                 <label for="textbox"><span class="required">Apellido Paterno </span></label>
-                                                 <input id="txt_apellido" name="txt_apellido"  type="text">
+                                                 <label for="textbox"><span class="required">Apellido Paterno y Materno</span></label>
+                                                 <input id="txt_apellidodifunto" name="txt_apellidodifunto"  type="text" >
                                             </div>
                                       </div>
-                                       <div class="col-md-4">
+                                      <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                               <label  for="textbox"><span class="required">Apellido Materno</span></label>
-                                               <input id="txt_apellido" name="txt_apellido"  type="text">
+                                               <label  for="textbox"><span class="required">Fecha de Fallecimiento</span></label>
+                                               <input id="txt_fechaf" name="txt_fechaf" type="date">
                                             </div>
                                       </div>
                        </div>
-                      Datos  de Cuartel
+                      DATOS DE ALQUILER
                       <div class="hr hr-1 dotted hr-double"></div>
                       <div class="row">
                                       <div class="col-md-4">
 	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Categoía<span class="required">*</span></label>
+	                                            <label  for="name">Categoría<span class="required">*</span></label>
 	                                            <select id="cbCategoria" name="cbCategoria" class="selectpicker" data-live-search="true"  title="Elija la Categoria">
 	                                            </select>
 	                                         </div>
@@ -187,60 +192,86 @@
 	                                             <select id="cbCuartel" name="cbCuartel" class="selectpicker" data-live-search="true"  title="Elija el Cuartel"></select>
                                             </div>
                                       </div>
-                                       <div class="col-md-4">
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                               <label  for="textbox"><span class="required">Nicho</span></label>
-                                               <select id="cbNicho" name="cbNicho" class="selectpicker" data-live-search="true"  title="Elija nicho con su nivel"> </select>
-                                            </div>
-                                      </div>
-
-                       </div>
-                       Datos de La Lompra
-                      <div class="hr hr-1 dotted hr-double"></div>
-                       <div class="row">
                                       <div class="col-md-4">
 	                                        <div class="col-md-6 col-sm-6 col-xs-12">
 	                                            <label  for="name">Nivel <span class="required">*</span></label>
-                                               <select id="cbPasaje" name="cbxTipologiaInv" class="selectpicker" data-live-search="true"  title="Elija nivel"> </select>
+                                               <select id="cbxNivel" name="cbxNivel" class="selectpicker" data-live-search="true"  title="Elija nivel"> </select>
 	                                         </div>
                                       </div>
+                                      
 
-                                      <div class="col-md-4">
+                       </div>
+                       
+                      <!--<div class="hr hr-1 dotted hr-double"></div>-->
+                       <div class="row">
+                                       <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                 <label for="textbox"><span class="required">Número</span></label>
-                                                 <input id="txt_apellido" name="txt_apellido"  type="text">
+                                               <label  for="textbox"><span class="required">Nicho</span></label>
+                                               <select id="cbNicho" name="cbNicho" class="selectpicker" data-live-search="true"  title="Elija Nicho"> </select>
                                             </div>
                                       </div>
                                        <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                <label  for="textbox"><span class="required">Precio</span></label>
-                                               <input id="txt_apellido" name="txt_apellido"  type="text">
+                                               <input id="txt_precio" name="txt_precio"  type="text">
                                             </div>
                                       </div>
+                                      <div class="col-md-4">
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                               <label  for="textbox"><span class="required">Fecha de alquiler</span></label>
+                                               <input id="txt_fechaalquiler" name="txt_fechaalquiler" type="date">
+                                            </div>
+                                      </div>
+                                     
                        </div>
-                     
+                     <div class="row">
+                       				<div class="col-md-4">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                               <label  for="textbox"><span class="required">Fecha fin alquiler</span></label>
+                                               <input id="txt_fechafinalquiler" name="txt_fechafinalquiler" type="date">
+                                            </div>
+                                      </div>
+
+                                       <div class="col-md-4">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                               <label  for="textbox"><span class="required">Detalle</span></label>
+                                               <input id="txt_detallealquiler" name="txt_detallealquiler" type="text">
+                                            </div>
+                                      </div>
+                     </div>
                       <div class="hr hr-1 dotted hr-double"></div>
-                        Datos  de Responsable
+                        DATOS DEL RESPONSABLE
                       <div class="row">
+                      				  <div class="col-md-4">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                               <label  for="textbox"><span class="required">Dni</span></label>
+                                               <input id="txt_Dni" name="txt_Dni"  type="text">
+                                            </div>
+                                      </div>
                                       <div class="col-md-4">
 	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">NOMBRE <span class="required">*</span></label>
-	                                            <input id="txt_nombredifunto" name="txt_nombrefuncion"  type="text">
+	                                            <label  for="name">Nombre <span class="required">*</span></label>
+	                                            <input id="txt_nombreresposable" name="txt_nombreresposable"  type="text">
 	                                         </div>
                                       </div>
 
                                       <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                 <label for="textbox"><span class="required">APELLIDO</span></label>
-                                                 <input id="txt_apellido" name="txt_apellido"  type="text">
+                                                 <label for="textbox"><span class="required">Apellido</span></label>
+                                                 <input id="txt_apellidoresponsable" name="txt_apellidoresponsable"  type="text">
                                             </div>
                                       </div>
-                                       <div class="col-md-4">
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                               <label  for="textbox"><span class="required">TELEFORNO</span></label>
-                                               <input id="txt_apellido" name="txt_apellido"  type="text">
-                                            </div>
+                                    
+                       </div>
+
+                      <div class="row">
+                                      <div class="col-md-4">
+	                                        <div class="col-md-6 col-sm-6 col-xs-12">
+	                                            <label  for="name">Dirección<span class="required">*</span></label>
+	                                            <input id="txt_direccion" name="txt_direccion"  type="text">
+	                                         </div>
                                       </div>
+                                   
                        </div>
                       <br>
 
