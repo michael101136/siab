@@ -29,22 +29,7 @@
                         type:$(this).attr('method'),
                         data:$(this).serialize(),
                         success:function(respuesta){
-                        
-                    if (respuesta==="exito") {
-                              alert("Los datos han sido guardados correctamente");
-                              $("#erro_alquilerVali").hide();
-                              $("#form-addAlquiler")[0].reset();
-                              swal("REGISTRADO!", resp, "success");
-                              $('#tabla-alquiler').dataTable()._fnAjaxUpdate();    //SIRVE PARA REFRESCAR LA TABLA 
-                        
-                            }
-                            else if(respuesta==="error"){
-                              alert("Los datos no se pudo guardar");
-                            }
-                            else{
-                              $("#erro_alquilerVali").show();
-                            }
-
+                          alert(respuesta);
                         }
                     });
 

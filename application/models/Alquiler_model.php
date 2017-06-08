@@ -5,18 +5,14 @@ class Alquiler_model extends CI_Model {
 
 
 function get_alquiler(){
-		$this->db->order_by('tnicho.id_nicho','DESC');
-		$this->db->select('categoria,nombre_cuartel,numero_nicho,nivel,CONCAT(tdifunto.nombre," ",tdifunto.apellido) as nombre,CONCAT(tresponsable.nombre_responsable," ",tresponsable.apellido_responsable) as responsable,fecha_inicio,fecha_final,EstadoA');
-		$this->db->from('tnicho');
-		$this->db->join('tcuartel', 'tnicho.id_cuartel=tcuartel.id_cuartel');
-		$this->db->join('tcategoria', 'tcuartel.id_categoria=tcategoria.id_categoria');
-		$this->db->join('pasaje', 'pasaje.id_pasaje=tcuartel.id_pasaje');
-		//para difunto y responsable
-		$this->db->join('tnicho_detalle', 'tnicho_detalle.id_nicho=tnicho.id_nicho');
-		$this->db->join('tdifunto', 'tnicho_detalle.id_difunto=tdifunto.id_difunto');
-		$this->db->join('tresponsable', 'tresponsable.idresponsable=tdifunto.idresponsable');
-		$consulta = $this->db->get();
-		return $consulta->result();
+	   $alquiler= $this->db->query("call get_alquiler()");
+        if ($alquiler->num_rows() > 0) 
+        {
+            return $alquiler->result();
+        } else 
+        {
+            return false;
+        }
 	}
 function Get_categoria(){
 		$this->db->select('id_categoria,categoria');
@@ -43,7 +39,8 @@ function get_nivel($id_cuartel){
      }
 function AddAlquiler($txt_Dni,$txt_nombreresposable,$txt_apellidoresponsable,$txt_direccion,$txt_nombredifunto,$txt_apellidodifunto,$txt_fechaf,$cbNicho,$txt_fechaalquiler,$txt_fechafinalquiler,$txt_detallealquiler)
 {
-	$this->db->query("call sp_alquiler_c ('".$txt_Dni."','".$txt_nombreresposable."','".$txt_apellidoresponsable."','".$txt_direccion."','".$txt_nombredifunto."','".$txt_apellidodifunto."','".$txt_fechaf."','".$cbNicho."','".$txt_fechaalquiler."','".$txt_fechafinalquiler."','".$txt_detallealquiler."') ");
+	$id_usuario="41";
+	$this->db->query("call sp_alquiler_c ('".$txt_Dni."','".$txt_nombreresposable."','".$txt_apellidoresponsable."','".$txt_direccion."','".$txt_nombredifunto."','".$txt_apellidodifunto."','".$txt_fechaf."','".$id_usuario."','".$cbNicho."','".$txt_fechaalquiler."','".$txt_fechafinalquiler."','".$txt_detallealquiler."') ");
             if ($this->db->affected_rows() > 0) 
               {
                 return true;
