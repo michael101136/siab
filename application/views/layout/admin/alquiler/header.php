@@ -448,7 +448,7 @@
 					</li>
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
+						<a href="" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text">CUARTEL</span>
 
@@ -459,7 +459,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="form-elements.html">
+								<a href="<?php echo site_url('Cuartel/'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 								     Cuartel
 								</a>

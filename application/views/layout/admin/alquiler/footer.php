@@ -47,12 +47,13 @@
 	     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/js/sweetalert.css">
 
 	    <script src="<?php echo base_url(); ?>assets/dist/js/bootstrap-select.js"></script><!--- para el selector con buscardor -->
+	    
 	    <!-- Custom Theme Scripts -->
 
 		<!-- ace scripts -->
 		<script src="<?php echo base_url(); ?>assets/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/ace.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/Admin/Alquiler/alquiler.js"></script>
-
+		<script src="<?php echo base_url(); ?>assets/Admin/Alquiler/cuartel.js"></script>
 	</body>
 </html>
