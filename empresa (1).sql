@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2017 a las 22:54:25
+-- Tiempo de generación: 09-06-2017 a las 04:51:56
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.0.18
 
@@ -27,7 +27,8 @@ DELIMITER $$
 -- Procedimientos
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_alquiler` ()  BEGIN
-SELECT categoria,nombre_cuartel,numero_nicho,nivel,CONCAT(tdifunto.nombre," ",tdifunto.apellido) as nombre,CONCAT(tresponsable.nombre_responsable," ",tresponsable.apellido_responsable) as responsable,fecha_inicio,fecha_final,EstadoA FROM tnicho INNER JOIN tcuartel ON tnicho.id_cuartel=tcuartel.id_cuartel INNER JOIN tcategoria INNER JOIN pasaje ON pasaje.id_pasaje=tcuartel.id_pasaje INNER JOIN tnicho_detalle ON tnicho_detalle.id_nicho=tnicho.id_nicho INNER JOIN tdifunto ON tnicho_detalle.id_difunto=tdifunto.id_difunto INNER JOIN tresponsable ON tresponsable.idresponsable=tdifunto.idresponsable ;
+SELECT nombrepasaje,categoria,nombre_cuartel,numero_nicho,nivel,CONCAT(tdifunto.nombre," ",tdifunto.apellido) as nombre,CONCAT(tresponsable.nombre_responsable," ",tresponsable.apellido_responsable) as responsable,fecha_inicio,fecha_final,EstadoA FROM tnicho INNER JOIN tcuartel ON tnicho.id_cuartel=tcuartel.id_cuartel INNER JOIN tcategoria on tcategoria.id_categoria=tcuartel.id_categoria INNER JOIN pasaje ON pasaje.id_pasaje=tcuartel.id_pasaje INNER JOIN tnicho_detalle ON tnicho_detalle.id_nicho=tnicho.id_nicho INNER JOIN tdifunto ON tnicho_detalle.id_difunto=tdifunto.id_difunto INNER JOIN tresponsable ON tresponsable.idresponsable=tdifunto.idresponsable
+;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_alquiler_c` (IN `Dni_responsable` INT(8), IN `nombre_responsable` VARCHAR(200), IN `apellido_responsable` VARCHAR(120), IN `Direccion_responsable` VARCHAR(120), IN `nombre` VARCHAR(120), IN `apellido` VARCHAR(120), IN `fecha_entierro` DATE, IN `id_usuario` INT(11), IN `id_nicho` INT(11), IN `fecha_inicio` DATE, IN `fecha_final` DATE, IN `Detalle_alquiler` VARCHAR(200))  begin
@@ -47,6 +48,10 @@ end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ControlAlquiler` ()  BEGIN
 UPDATE tnicho_detalle set EstadoA='0' where (CURRENT_TIMESTAMP>fecha_final);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ControlAlquilerRenovar` ()  BEGIN
+UPDATE tnicho_detalle set EstadoA='1' where (CURRENT_TIMESTAMP<fecha_final);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_nichos` (IN `id_cuartel` INT(8), IN `nivel` INT(8))  begin SELECT* FROM tnicho
@@ -260,6 +265,13 @@ CREATE TABLE `tdifunto` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tdifunto`
+--
+
+INSERT INTO `tdifunto` (`id_difunto`, `nombre`, `apellido`, `fecha_fallecimiento`, `estado`, `idresponsable`, `id_usuario`) VALUES
+(6, 'rosa', 'PIMENTEL', '0000-00-00', 1, 1, 41);
+
 -- --------------------------------------------------------
 
 --
@@ -308,7 +320,7 @@ CREATE TABLE `thistorial` (
 --
 
 INSERT INTO `thistorial` (`id_historial`, `id_nicho_detalle`, `fechaih`, `fechafh`) VALUES
-(1, 1, '2017-06-08', '2018-06-30');
+(1, 7, '2017-01-02', '2018-01-30');
 
 -- --------------------------------------------------------
 
@@ -3592,7 +3604,7 @@ CREATE TABLE `tnicho_detalle` (
 --
 
 INSERT INTO `tnicho_detalle` (`id_nicho_detalle`, `id_difunto`, `id_nicho`, `fecha_inicio`, `fecha_final`, `EstadoA`, `Estado_AD`, `Detalle_alquiler`) VALUES
-(1, 1, 335, '2017-06-08', '2018-06-30', 1, 1, 'pago adelantado ');
+(7, 6, 32, '2017-01-02', '2017-01-30', 0, 1, 'sector señor de animas ');
 
 -- --------------------------------------------------------
 
@@ -3613,55 +3625,7 @@ CREATE TABLE `tresponsable` (
 --
 
 INSERT INTO `tresponsable` (`idresponsable`, `Dni_responsable`, `nombre_responsable`, `apellido_responsable`, `Direccion_responsable`) VALUES
-(1, 0, 'admin', 'admin', '--'),
-(2, 0, 'admin', 'admin', '--'),
-(3, 0, 'Brigida ', 'Anampa Caballero', 'Asoc. Victor Tamburo'),
-(4, 0, 'Mirriam', 'Condorhuacho', 'jr. arenas 200'),
-(5, 0, '44125', 'fgdfg', 'fdg'),
-(6, 0, 'saadasd', 'asd', 'asdsad'),
-(7, 0, 'Brigida ', 'Anampa Caballero', 'Asoc. Victor Tamburo'),
-(8, 0, 'Elade ', 'Ramos Quispe', 'Av. Chalhuanca'),
-(9, 0, 'antoni', 'correa diaz', 'jr junin 123'),
-(10, 0, 'sdfhjdf', 'hdsfsdjf', 'sdfjksdjfsdf'),
-(11, 123, 'rita', 'asd', 'av'),
-(12, 123, 'txt_nombreresposable', 'txt_apellidoresponsable', 'txt_direccion'),
-(13, 112, 'txt_nombreresposable', 'txt_apellidoresponsable', 'txt_direccion'),
-(14, 123, 'nombreresposable', 'txt_apellidoresponsable', 'txt_direccion'),
-(15, 123, 'nombreresposable', 'txt_apellidoresponsable', 'txt_direccion'),
-(16, 123, 'qwaesrdtf', 'txt_apellidoresponsable', 'txt_direccion'),
-(17, 2121212, 'michael', 'txt_apellidoresponsable', 'txt_direccion'),
-(18, 70123, 'angelica', 'soliz perez', 'av lima 123'),
-(19, 0, '', '', ''),
-(20, 213, '', '', ''),
-(21, 213, '', '', ''),
-(22, 12121121, '', '', ''),
-(23, 123, 'MCHAEL ALEXANDE', 'PALOMINO', 'AV.CHAL'),
-(24, 121, 'MCHAEL ALEXANDE', 'PALOMINO', 'AV.CHAL'),
-(25, 121, 'MCHAEL ALEXANDE', 'PALOMINO', 'AV.CHAL'),
-(26, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(27, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(28, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(29, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(30, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(31, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(32, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(33, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(34, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(35, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(36, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(37, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(38, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(39, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(40, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(41, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(42, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(43, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(44, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(45, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(46, 2132132, 'sfsdfsdf', 'sdfsdf', 'sdfsdf'),
-(47, 0, '', '', ''),
-(48, 123234, 'DSFSDF', 'SDFSDF', 'FSDF'),
-(49, 121121, 'alexander', 'pimentel', 'michael101136@gmail.com');
+(1, 111111, 'norka', 'pimentel', 'av  camani');
 
 -- --------------------------------------------------------
 
@@ -3840,7 +3804,7 @@ ALTER TABLE `tcuartel`
 -- AUTO_INCREMENT de la tabla `tdifunto`
 --
 ALTER TABLE `tdifunto`
-  MODIFY `id_difunto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_difunto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `thistorial`
 --
@@ -3860,12 +3824,12 @@ ALTER TABLE `tnicho`
 -- AUTO_INCREMENT de la tabla `tnicho_detalle`
 --
 ALTER TABLE `tnicho_detalle`
-  MODIFY `id_nicho_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_nicho_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `tresponsable`
 --
 ALTER TABLE `tresponsable`
-  MODIFY `idresponsable` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `idresponsable` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tservicios`
 --

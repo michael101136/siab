@@ -16,6 +16,18 @@ class Alquiler extends CI_Controller {/* Mantenimiento de division funcional y g
 		$this->_load_layout('admin/alquiler/alquiler');
     //$this->_load_layout('Front/Administracion/frmFuncion');
 	}
+  //control de pagos actualiza constantemente 
+  public function ControlAlquiler(){
+    if ($this->input->is_ajax_request()) {
+
+      $datos = $this->Alquiler_model->ControlAlquiler();      
+    }
+    else
+    {
+      show_404();
+    }
+  }
+  //fin para actulizar lospagos
   public function AddAlquiler()
   {
     if ($this->input->is_ajax_request()) 

@@ -1,4 +1,6 @@
  $(document).on("ready" ,function(){
+          
+          ControlAlquiler();
           listaAlquiler();
           $("#erro_alquilerVali").hide();
           //lista();
@@ -55,6 +57,20 @@
                         }
                     });
         }
+        //para el control de pagos
+        var  ControlAlquiler=function(){
+
+              $.ajax({
+                        "url":base_url +"index.php/Alquiler/ControlAlquiler",
+                        type:"POST",
+                        data:{},
+                        success:function(respuesta){
+                          
+                        }
+                    });
+              
+        }
+        //fin control de pagos
         var get_cuartel=function(categoria){
           html="";
                     $("#cbCuartel").html(html);
@@ -129,6 +145,7 @@
                                     "dataSrc":""
                                     },
                                 "columns":[
+                                    {"data":"nombrepasaje"},
                                     {"data":"categoria"},
                                     {"data":"nombre_cuartel"},
                                     {"data":"numero_nicho"},

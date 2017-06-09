@@ -87,6 +87,7 @@
 																			<table id="tabla-alquiler" class="table table-striped table-bordered table-hover">
 																				<thead>
 																					<tr>
+																						<th>Pasaje</th>
 																						<th>Categía</th>
 																						<th>Cuartel</th>
 																						<th>Nicho</th>

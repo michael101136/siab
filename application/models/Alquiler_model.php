@@ -62,5 +62,12 @@ function get_nicho($id_cuartel,$nivel){
 			        }
       }
 
+      //control de pagos
+     function ControlAlquiler(){
+     $this->db->query("call sp_ControlAlquiler()");
+     $this->db->query("call sp_ControlAlquilerRenovar()");
+     
+     }
+
 
 }
