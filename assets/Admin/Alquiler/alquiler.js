@@ -1,5 +1,5 @@
  $(document).on("ready" ,function(){
-          
+         iniciando();
           ControlAlquiler();
           listaAlquiler();
           $("#erro_alquilerVali").hide();
@@ -21,6 +21,18 @@
             var nivel=$("#cbxNivel").val();
              get_nicho(id_cuartel,nivel);
           });
+        function iniciando(){
+          var objet={};
+          _.extend(objet,Backbone.Events);//andescor para recivil y mandar evento 
+          objet.on("alert",function(msg,el){
+            alert(msg);
+            el.append("<div>hola<div>");
+          });
+          $("#nicho").click(function(){
+              objet.trigger("alert","parametros de eventos",$(this));
+          });
+          
+        }
 
                 //AGREGAR ALQUILER
                 $("#form-addAlquiler").submit(function(event)
@@ -132,13 +144,12 @@
                 {
                     var table=$("#tabla-alquiler").DataTable({
                      "processing":true,
-                     "serverSide":false,
                       "scrollY": 350,
                       "scrollX": true,
                       "scrollCollapse": true,
                       "paging":         true,
-                     destroy:true,
-
+                      destroy:true,
+                      dataSrc:"",
                          "ajax":{
                                     "url": base_url+"index.php/Alquiler/get_alquiler",
                                     "method":"POST",

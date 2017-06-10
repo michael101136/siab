@@ -1,537 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>SISTEMA DE BENEFICENCIA PÚBLICA DE ABANCAY</title>
+    <head>        
+        <!-- META SECTION -->
+        <title>Joli Admin - Responsive Bootstrap Admin Template</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="<?php echo base_url(); ?>assets/css/theme-default.css"/>
+        <!-- EOF CSS INCLUDE -->  
+         <script>
+         var base_url="<?php base_url();?>";
+         </script>                                
+    </head>
+
+    <body>
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+            
+            <!-- START PAGE SIDEBAR -->
+            <div class="page-sidebar">
+                <!-- START X-NAVIGATION -->
+                <ul class="x-navigation">
+                    <li class="xn-logo">
+                        <a href="index.html">Joli Admin</a>
+                        <a href="#" class="x-navigation-control"></a>
+                    </li>
+                    <li class="xn-profile">
+                        <a href="#" class="profile-mini">
+                            <img src="assets/images/users/avatar.jpg" alt="John Doe"/>
+                        </a>
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img src="assets/images/users/avatar.jpg" alt="John Doe"/>
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name">John Doe</div>
+                                <div class="profile-data-title">Web Developer/Designer</div>
+                            </div>
+                            <div class="profile-controls">
+                                <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                            </div>
+                        </div>                                                                        
+                    </li>
+                    <li class="xn-title">Navigation</li>                    
+                    <li>
+                        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
+                        <ul>
+                            <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Gallery</a></li>
+                            <li><a href="pages-profile.html"><span class="fa fa-user"></span> Profile</a></li>
+                            <li><a href="pages-address-book.html"><span class="fa fa-users"></span> Address Book</a></li>
+                            <li class="xn-openable">
+                                <a href="#"><span class="fa fa-clock-o"></span> Timeline</a>
+                                <ul>
+                                    <li><a href="pages-timeline.html"><span class="fa fa-align-center"></span> Default</a></li>
+                                    <li><a href="pages-timeline-simple.html"><span class="fa fa-align-justify"></span> Full Width</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
+                                <a href="#"><span class="fa fa-envelope"></span> Mailbox</a>
+                                <ul>
+                                    <li><a href="pages-mailbox-inbox.html"><span class="fa fa-inbox"></span> Inbox</a></li>
+                                    <li><a href="pages-mailbox-message.html"><span class="fa fa-file-text"></span> Message</a></li>
+                                    <li><a href="pages-mailbox-compose.html"><span class="fa fa-pencil"></span> Compose</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="pages-messages.html"><span class="fa fa-comments"></span> Messages</a></li>
+                            <li><a href="pages-calendar.html"><span class="fa fa-calendar"></span> Calendar</a></li>
+                            <li><a href="pages-tasks.html"><span class="fa fa-edit"></span> Tasks</a></li>
+                            <li><a href="pages-content-table.html"><span class="fa fa-columns"></span> Content Table</a></li>
+                            <li><a href="pages-faq.html"><span class="fa fa-question-circle"></span> FAQ</a></li>
+                            <li><a href="pages-search.html"><span class="fa fa-search"></span> Search</a></li>
+                            <li class="xn-openable">
+                                <a href="#"><span class="fa fa-file"></span> Blog</a>
+                                
+                                <ul>                                    
+                                    <li><a href="pages-blog-list.html"><span class="fa fa-copy"></span> List of Posts</a></li>
+                                    <li><a href="pages-blog-post.html"><span class="fa fa-file-o"></span>Single Post</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
+                                <a href="#"><span class="fa fa-sign-in"></span> Login</a>
+                                <ul>                                    
+                                    <li><a href="pages-login.html">App Login</a></li>
+                                    <li><a href="pages-login-website.html">Website Login</a></li>
+                                    <li><a href="pages-login-website-light.html"> Website Login Light</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="xn-openable">
+                                <a href="#"><span class="fa fa-warning"></span> Error Pages</a>
+                                <ul>                                    
+                                    <li><a href="pages-error-404.html">Error 404 Sample 1</a></li>
+                                    <li><a href="pages-error-404-2.html">Error 404 Sample 2</a></li>
+                                    <li><a href="pages-error-500.html"> Error 500</a></li>
+                                </ul>
+                            </li>                            
+                        </ul>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Layouts</span></a>
+                        <ul>
+                            <li><a href="layout-boxed.html">Boxed</a></li>
+                            <li><a href="layout-nav-toggled.html">Navigation Toggled</a></li>
+                            <li><a href="layout-nav-top.html">Navigation Top</a></li>
+                            <li><a href="layout-nav-right.html">Navigation Right</a></li>
+                            <li><a href="layout-nav-top-fixed.html">Top Navigation Fixed</a></li>                            
+                            <li><a href="layout-nav-custom.html">Custom Navigation</a></li>
+                            <li><a href="layout-frame-left.html">Frame Left Column</a></li>
+                            <li><a href="layout-frame-right.html">Frame Right Column</a></li>
+                            <li><a href="layout-search-left.html">Search Left Side</a></li>
+                            <li><a href="blank.html">Blank Page</a></li>
+                        </ul>
+                    </li>         
+                    <li class="xn-title">Components</li>                    
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">UI Kits</span></a>
+                        <ul>
+                            <li><a href="ui-widgets.html"><span class="fa fa-heart"></span> Widgets</a></li>                            
+                            <li><a href="ui-elements.html"><span class="fa fa-cogs"></span> Elements</a></li>
+                            <li><a href="ui-buttons.html"><span class="fa fa-square-o"></span> Buttons</a></li>                            
+                            <li><a href="ui-panels.html"><span class="fa fa-pencil-square-o"></span> Panels</a></li>
+                            <li><a href="ui-icons.html"><span class="fa fa-magic"></span> Icons</a><div class="informer informer-warning">+679</div></li>
+                            <li><a href="ui-typography.html"><span class="fa fa-pencil"></span> Typography</a></li>
+                            <li><a href="ui-portlet.html"><span class="fa fa-th"></span> Portlet</a></li>
+                            <li><a href="ui-sliders.html"><span class="fa fa-arrows-h"></span> Sliders</a></li>
+                            <li><a href="ui-alerts-popups.html"><span class="fa fa-warning"></span> Alerts & Popups</a></li>                            
+                            <li><a href="ui-lists.html"><span class="fa fa-list-ul"></span> Lists</a></li>
+                            <li><a href="ui-tour.html"><span class="fa fa-random"></span> Tour</a></li>
+                        </ul>
+                    </li>                    
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Forms</span></a>
+                        <ul>
+                            <li>
+                                <a href="form-layouts-two-column.html"><span class="fa fa-tasks"></span> Form Layouts</a>
+                                <div class="informer informer-danger">New</div>
+                                <ul>
+                                    <li><a href="form-layouts-one-column.html"><span class="fa fa-align-justify"></span> One Column</a></li>
+                                    <li><a href="form-layouts-two-column.html"><span class="fa fa-th-large"></span> Two Column</a></li>
+                                    <li><a href="form-layouts-tabbed.html"><span class="fa fa-table"></span> Tabbed</a></li>
+                                    <li><a href="form-layouts-separated.html"><span class="fa fa-th-list"></span> Separated Rows</a></li>
+                                </ul> 
+                            </li>
+                            <li><a href="form-elements.html"><span class="fa fa-file-text-o"></span> Elements</a></li>
+                            <li><a href="form-validation.html"><span class="fa fa-list-alt"></span> Validation</a></li>
+                            <li><a href="form-wizards.html"><span class="fa fa-arrow-right"></span> Wizards</a></li>
+                            <li><a href="form-editors.html"><span class="fa fa-text-width"></span> WYSIWYG Editors</a></li>
+                            <li><a href="form-file-handling.html"><span class="fa fa-floppy-o"></span> File Handling</a></li>
+                        </ul>
+                    </li>
+                    <li class="xn-openable active">
+                        <a href="tables.html"><span class="fa fa-table"></span> <span class="xn-text">Tables</span></a>
+                        <ul>                            
+                            <li><a href="table-basic.html"><span class="fa fa-align-justify"></span> Basic</a></li>
+                            <li><a href="table-datatables.html"><span class="fa fa-sort-alpha-desc"></span> Data Tables</a></li>
+                            <li class="active"><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                     
+                        </ul>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Charts</span></a>
+                        <ul>
+                            <li><a href="charts-morris.html"><span class="xn-text">Morris</span></a></li>
+                            <li><a href="charts-nvd3.html"><span class="xn-text">NVD3</span></a></li>
+                            <li><a href="charts-rickshaw.html"><span class="xn-text">Rickshaw</span></a></li>
+                            <li><a href="charts-other.html"><span class="xn-text">Other</span></a></li>
+                        </ul>
+                    </li>     
+                    <li>
+                        <a href="maps.html"><span class="fa fa-map-marker"></span> <span class="xn-text">Maps</span></a>
+                    </li>                    
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-sitemap"></span> <span class="xn-text">Navigation Levels</span></a>
+                        <ul>                            
+                            <li class="xn-openable">
+                                <a href="#">Second Level</a>
+                                <ul>
+                                    <li class="xn-openable">
+                                        <a href="#">Third Level</a>
+                                        <ul>
+                                            <li class="xn-openable">
+                                                <a href="#">Fourth Level</a>
+                                                <ul>
+                                                    <li><a href="#">Fifth Level</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>                            
+                        </ul>
+                    </li>                    
+                </ul>
+                <!-- END X-NAVIGATION -->
+            </div>
+            <!-- END PAGE SIDEBAR -->
+            
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <!-- TOGGLE NAVIGATION -->
+                    <li class="xn-icon-button">
+                        <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                    </li>
+                    <!-- END TOGGLE NAVIGATION -->
+                    <!-- SEARCH -->
+                    <li class="xn-search">
+                        <form role="form">
+                            <input type="text" name="search" placeholder="Search..."/>
+                        </form>
+                    </li>   
+                    <!-- END SEARCH -->
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>                        
+                    </li> 
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-comments"></span></a>
+                        <div class="informer informer-danger">4</div>
+                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                                <div class="pull-right">
+                                    <span class="label label-danger">4 new</span>
+                                </div>
+                            </div>
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-online"></div>
+                                    <img src="assets/images/users/user2.jpg" class="pull-left" alt="John Doe"/>
+                                    <span class="contacts-title">John Doe</span>
+                                    <p>Praesent placerat tellus id augue condimentum</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-away"></div>
+                                    <img src="assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk"/>
+                                    <span class="contacts-title">Dmitry Ivaniuk</span>
+                                    <p>Donec risus sapien, sagittis et magna quis</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-away"></div>
+                                    <img src="assets/images/users/user3.jpg" class="pull-left" alt="Nadia Ali"/>
+                                    <span class="contacts-title">Nadia Ali</span>
+                                    <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-offline"></div>
+                                    <img src="assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader"/>
+                                    <span class="contacts-title">Darth Vader</span>
+                                    <p>I want my money back!</p>
+                                </a>
+                            </div>     
+                            <div class="panel-footer text-center">
+                                <a href="pages-messages.html">Show all messages</a>
+                            </div>                            
+                        </div>                        
+                    </li>
+                    <!-- END MESSAGES -->
+                    <!-- TASKS -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-tasks"></span></a>
+                        <div class="informer informer-warning">3</div>
+                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                                <div class="pull-right">
+                                    <span class="label label-warning">3 active</span>
+                                </div>
+                            </div>
+                            <div class="panel-body list-group scroll" style="height: 200px;">                                
+                                <a class="list-group-item" href="#">
+                                    <strong>Phasellus augue arcu, elementum</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                                    </div>
+                                    <small class="text-muted">John Doe, 25 Sep 2014 / 50%</small>
+                                </a>
+                                <a class="list-group-item" href="#">
+                                    <strong>Aenean ac cursus</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">80%</div>
+                                    </div>
+                                    <small class="text-muted">Dmitry Ivaniuk, 24 Sep 2014 / 80%</small>
+                                </a>
+                                <a class="list-group-item" href="#">
+                                    <strong>Lorem ipsum dolor</strong>
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+                                    </div>
+                                    <small class="text-muted">John Doe, 23 Sep 2014 / 95%</small>
+                                </a>
+                                <a class="list-group-item" href="#">
+                                    <strong>Cras suscipit ac quam at tincidunt.</strong>
+                                    <div class="progress progress-small">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                                    </div>
+                                    <small class="text-muted">John Doe, 21 Sep 2014 /</small><small class="text-success"> Done</small>
+                                </a>                                
+                            </div>     
+                            <div class="panel-footer text-center">
+                                <a href="pages-tasks.html">Show all tasks</a>
+                            </div>                            
+                        </div>                        
+                    </li>
+                    <!-- END TASKS -->
+                </ul>
 
-		<meta name="description" content="Static &amp; Dynamic Tables" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-		<!-- page specific plugin styles -->
-
-		<!-- text fonts -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/fonts.googleapis.com.css" />
-
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/bootstrap-select.css"><!--- para el selector con buscardor-->
-		<!-- ace styles -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
-
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-		<![endif]-->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace-skins.min.css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace-rtl.min.css" />
-
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- ace settings handler -->
-		<script src="<?php echo base_url(); ?>assets/js/ace-extra.min.js"></script>
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<script>
-    var base_url = '<?php echo base_url(); ?>';
-    </script>
-
-	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default          ace-save-state">
-			<div class="navbar-container ace-save-state" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
-						<small>
-							<i class="fa fa-leaf"></i>
-							SISTEMA DE BENEFICENCIA PÚBLICA DE APURÍMAC
-						</small>
-					</a>
-				</div>
-
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-						<li class="grey dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-tasks"></i>
-								<span class="badge badge-grey">4</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-check"></i>
-									4 Tasks to complete
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar">
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">Software Update</span>
-													<span class="pull-right">65%</span>
-												</div>
-
-												<div class="progress progress-mini">
-													<div style="width:65%" class="progress-bar"></div>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">Hardware Upgrade</span>
-													<span class="pull-right">35%</span>
-												</div>
-
-												<div class="progress progress-mini">
-													<div style="width:35%" class="progress-bar progress-bar-danger"></div>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">Unit Testing</span>
-													<span class="pull-right">15%</span>
-												</div>
-
-												<div class="progress progress-mini">
-													<div style="width:15%" class="progress-bar progress-bar-warning"></div>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">Bug Fixes</span>
-													<span class="pull-right">90%</span>
-												</div>
-
-												<div class="progress progress-mini progress-striped active">
-													<div style="width:90%" class="progress-bar progress-bar-success"></div>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="#">
-										See tasks with details
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="purple dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-								<span class="badge badge-important">8</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-exclamation-triangle"></i>
-									8 Notifications
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar navbar-pink">
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-														New Comments
-													</span>
-													<span class="pull-right badge badge-info">+12</span>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												Bob just signed up as an editor ...
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
-														New Orders
-													</span>
-													<span class="pull-right badge badge-success">+8</span>
-												</div>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<div class="clearfix">
-													<span class="pull-left">
-														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
-														Followers
-													</span>
-													<span class="pull-right badge badge-info">+11</span>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="#">
-										See all notifications
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="green dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-								<span class="badge badge-success">5</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-envelope-o"></i>
-									5 Messages
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar">
-										<li>
-											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Alex:</span>
-														Ciao sociis natoque penatibus et auctor ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>a moment ago</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Susan:</span>
-														Vestibulum id ligula porta felis euismod ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>20 minutes ago</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Bob:</span>
-														Nullam quis risus eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>3:15 pm</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Kate:</span>
-														Ciao sociis natoque eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>1:33 pm</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Fred:</span>
-														Vestibulum id penatibus et auctor  ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>10:09 am</span>
-													</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="inbox.html">
-										See all messages
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="light-blue dropdown-modal">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
-								<span class="user-info">
-									<small>Welcome,</small>
-									Jason
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-cog"></i>
-										Settings
-									</a>
-								</li>
-
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div><!-- /.navbar-container -->
-		</div>
-
-		<div class="main-container ace-save-state" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
-
-			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
-				<script type="text/javascript">
-					try{ace.settings.loadState('sidebar')}catch(e){}
-				</script>
-
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
-
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-
-				<ul class="nav nav-list">
-					<li class="">
-						<a href="index.html">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text">Modulos</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-					<li class="active open">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text">SERVICIOS</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="active">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Alquiler
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jqgrid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									 Servicios
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text">CUARTEL</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="<?php echo site_url('Cuartel/'); ?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-								     Cuartel
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-elements-2.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Nichos
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
-							<span class="menu-text">REPORTES</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="profile.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Reportes
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-		
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
-
-							<span class="menu-text">
-								USUARIOS
-
-								<span class="badge badge-primary">5</span>
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="faq.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Usuarios
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-						</ul>
-					</li>
-				</ul><!-- /.nav-list -->
-
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
-			</div>

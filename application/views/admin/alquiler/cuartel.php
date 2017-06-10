@@ -21,10 +21,10 @@
 
 						<div class="page-header">
 							<h1>
-								ALQUILER 
+								CUARTELES
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									DE NICHOS
+								CUARTELES
 								</small>
 							</h1>
 						</div><!-- /.page-header -->

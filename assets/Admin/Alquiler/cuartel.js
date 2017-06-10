@@ -1,6 +1,5 @@
  $(document).on("ready" ,function(){
           //lista();
-          alert("hola");
               ListarCuartel(); //LLAMAR AL METODO META PRESUPUESTAL
      
 			});
@@ -11,10 +10,14 @@
                 {
                     var table=$("#tabla-cuartel").DataTable({
                      "processing":true,
-                     "serverSide":false,
-                     destroy:true,
+                      "scrollY": 350,
+                      "scrollX": true,
+                      "scrollCollapse": true,
+                      "paging":         true,
+                      destroy:true,
+                      dataSrc:"",
                          "ajax":{
-                                    "url":base_url +"index.php/Cuartel/ListarCuartel",
+                                    "url":base_url +"index.php/Cuartel/get_alquiler",
                                     "method":"POST",
                                      "dataSrc":""
                                     },

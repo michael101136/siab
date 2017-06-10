@@ -1,142 +1,75 @@
+<!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Tables</a></li>
+                    <li class="active">Basic</li>
+                </ul>
+                <!-- END BREADCRUMB -->
+                
+                <!-- PAGE TITLE -->
+                <div class="page-title">                    
+                    <h2><span class="fa fa-arrow-circle-o-left"></span>Alquiler de nichos</h2>
+                </div>
+                <!-- END PAGE TITLE -->                
+                
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
 
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="page-content">
-						<div class="ace-settings-container" id="ace-settings-container">
-							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-								<i class="ace-icon fa fa-cog bigger-130"></i>
-							</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <!-- START DATATABLE EXPORT -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Data</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'excel',escape:'false'});"><img src='img/icons/xls.png' width="24"/> XLS</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'doc',escape:'false'});"><img src='img/icons/word.png' width="24"/> Word</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'powerpoint',escape:'false'});"><img src='img/icons/ppt.png' width="24"/> PowerPoint</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'png',escape:'false'});"><img src='img/icons/png.png' width="24"/> PNG</a></li>
+                                            <li><a href="#" onClick ="$('#customers2').tableExport({type:'pdf',escape:'false'});"><img src='img/icons/pdf.png' width="24"/> PDF</a></li>
+                                        </ul>
+                                    </div>  
+                                          
+                                    <div class="btn-group pull-left">
+                                        <button class="btn btn-sm btn-primary" id="btn_alquiler" data-toggle="modal" data-target="#modalAlquiler"  data-toggle="dropdown"><i class="fa fa-bars"></i>Alquiler</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="tabla-alquiler" class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Pasaje</th>
+                                                <th>Categía</th>
+                                                <th>Cuartel</th>
+                                                <th>Nicho</th>
+                                                <th>Nivel</th>
+                                                <th>Difunto</th>
+                                                <th>Responsable</th>
+                                                <th>Fecha Incio</th>
+                                                <th>Fecha Vencimiento</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                               
+                                            </tbody>
+                                    </table>                                    
+                                    
+                                </div>
+                            </div>
+                            <!-- END DEFAULT TABLE EXPORT -->
 
-							<div class="ace-settings-box clearfix" id="ace-settings-box">
+                        </div>
+                    </div>
 
-								<div class="pull-left width-50">
-									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
-										<label class="lbl" for="ace-settings-hover">Configuración de Usuario</label>
-									</div>
-
-								</div><!-- /.pull-left -->
-							</div><!-- /.ace-settings-box -->
-						</div><!-- /.ace-settings-container -->
-
-						<div class="page-header">
-							<h1>
-								ALQUILER 
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									DE NICHOS
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
-
-						<div class="row">
-									<div class="col-sm-12">
-										<div class="tabbable">
-											<ul class="nav nav-tabs" id="myTab">
-												<li class="active">
-													<a data-toggle="tab" href="#home">
-														<i class="green ace-icon fa fa-home bigger-120"></i>
-														 Alquiler
-													</a>
-												</li>
-
-												<li>
-													<a data-toggle="tab" href="#messages">
-														Nichos  Vencidos
-														<span class="badge badge-danger">4</span>
-													</a>
-												</li>
-
-												<li class="dropdown">
-													<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-														Dropdown &nbsp;
-														<i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
-													</a>
-
-													<ul class="dropdown-menu dropdown-info">
-														<li>
-															<a data-toggle="tab" href="#dropdown1">@fat</a>
-														</li>
-
-														<li>
-															<a data-toggle="tab" href="#dropdown2">@mdo</a>
-														</li>
-													</ul>
-												</li>
-											</ul>
-
-											<div class="tab-content">
-											<button class="btn btn-sm btn-primary" id="btn_alquiler" data-toggle="modal" data-target="#modalAlquiler">Alquiler</button>
-												<div id="home" class="tab-pane fade in active">
-														<div class="row">
-															<div class="col-xs-12">
-																<!-- PAGE CONTENT BEGINS -->
-																<div class="row">
-																	<div class="col-xs-12">
-																		<div class="clearfix">
-																			<div class="pull-right tableTools-container"></div>
-																		</div>
-																		<div class="table-header">
-																		NICHOS ALQUILADOS
-																		</div>
-
-																		<!-- div.table-responsive -->
-
-																		<!-- div.dataTables_borderWrap -->
-																		<div>
-																			<table id="tabla-alquiler" class="table table-striped table-bordered table-hover">
-																				<thead>
-																					<tr>
-																						<th>Pasaje</th>
-																						<th>Categía</th>
-																						<th>Cuartel</th>
-																						<th>Nicho</th>
-																						<th>Nivel</th>
-																						<th>Difunto</th>
-																						<th>Responsable</th>
-																						<th>Fecha Incio</th>
-																						<th>Fecha Vencimiento</th>
-																						<th>Estado</th>
-																						<th></th>
-																					</tr>
-																				</thead>
-
-																				<tbody>
-
-																					
-																				</tbody>
-																			</table>
-																		</div>
-																	</div>
-																</div>
-
-																<!-- PAGE CONTENT ENDS -->
-															</div><!-- /.col -->
-														</div><!-- /.row -->
-												</div>
-
-												<div id="messages" class="tab-pane fade">
-													<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
-												</div>
-
-												<div id="dropdown1" class="tab-pane fade">
-													<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
-												</div>
-
-												<div id="dropdown2" class="tab-pane fade">
-													<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
-												</div>
-											</div>
-										</div>
-									</div><!-- /.col -->
-	
-								</div><!-- /.row -->
-
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
-
-<!-- /.ventana alquiler -->			
+                </div>         
+                <!-- END PAGE CONTENT WRAPPER -->
+<!-- /.ventana alquiler -->         
 <div class="modal fade" id="modalAlquiler" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -148,21 +81,30 @@
          <div class="row">
             <div class="col-xs-12">
 
-                 <div class="alert alert-danger" id="erro_alquilerVali" style="text-align:left;">
-							  	<strong>¡Importante!</strong> Corregir los siguientes errores.
-							  	<div class="list-errors"></div>
-					</div>
-                  <!-- FORULARIO PARA REGISTRAR NUEVO FUNCION  -->
+                 <!-- <div class="alert alert-danger" id="erro_alquilerVali" style="text-align:left;">
+                                <strong>¡Importante!</strong> Corregir los siguientes errores.
+                                <div class="list-errors"></div>
+                    </div>
+                  FORULARIO PARA REGISTRAR NUEVO FUNCION  -->
                 <form class="form-horizontal " id="form-addAlquiler" action="<?php echo  base_url();?>Alquiler/AddAlquiler" method="POST">
-                      DATOS DEL DIFUNTO
                       <div class="hr hr-1 dotted hr-double"></div>
                       <div class="row">
-                                      <div class="col-md-4">
-	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Nombre<span class="required">*</span></label>
-	                                            <input id="txt_nombredifunto" name="txt_nombredifunto"  type="text">
-	                                         </div>
+                                      <div class="form-group">
+                                                <label class="col-md-1 control-label">Nombre</label>
+                                                 <div class="col-md-3">
+                                                      <input id="txt_nombredifunto" name="txt_nombredifunto"  class="form-control" type="text">
+                                                </div>
+                                                <label class="col-md-1 control-label">Nombre</label>
+                                                 <div class="col-md-3">
+                                                      <input id="txt_nombredifunto" name="txt_nombredifunto"  class="form-control" type="text">
+                                                </div>
+                                                <label class="col-md-1 control-label">Nombre</label>
+                                                 <div class="col-md-3">
+                                                      <input id="txt_nombredifunto" name="txt_nombredifunto"  class="form-control" type="text">
+                                                </div>
+
                                       </div>
+
 
                                       <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -181,23 +123,23 @@
                       <div class="hr hr-1 dotted hr-double"></div>
                       <div class="row">
                                       <div class="col-md-4">
-	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Categoría<span class="required">*</span></label>
-	                                            <select id="cbCategoria" name="cbCategoria" class="selectpicker" data-live-search="true"  title="Elija la Categoria">
-	                                            </select>
-	                                         </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <label  for="name">Categoría<span class="required">*</span></label>
+                                                <select id="cbCategoria" name="cbCategoria" class="selectpicker" data-live-search="true"  title="Elija la Categoria">
+                                                </select>
+                                             </div>
                                       </div>
                                       <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                  <label for="textbox"><span class="required">Cuartel</span></label>
-	                                             <select id="cbCuartel" name="cbCuartel" class="selectpicker" data-live-search="true"  title="Elija el Cuartel"></select>
+                                                 <select id="cbCuartel" name="cbCuartel" class="selectpicker" data-live-search="true"  title="Elija el Cuartel"></select>
                                             </div>
                                       </div>
                                       <div class="col-md-4">
-	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Nivel <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <label  for="name">Nivel <span class="required">*</span></label>
                                                <select id="cbxNivel" name="cbxNivel" class="selectpicker" data-live-search="true"  title="Elija nivel"> </select>
-	                                         </div>
+                                             </div>
                                       </div>
                                       
 
@@ -226,7 +168,7 @@
                                      
                        </div>
                      <div class="row">
-                       				<div class="col-md-4">
+                                    <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                <label  for="textbox"><span class="required">Fecha fin alquiler</span></label>
                                                <input id="txt_fechafinalquiler" name="txt_fechafinalquiler" type="date">
@@ -243,17 +185,17 @@
                       <div class="hr hr-1 dotted hr-double"></div>
                         DATOS DEL RESPONSABLE
                       <div class="row">
-                      				  <div class="col-md-4">
+                                      <div class="col-md-4">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                <label  for="textbox"><span class="required">Dni</span></label>
                                                <input id="txt_Dni" name="txt_Dni"  type="text">
                                             </div>
                                       </div>
                                       <div class="col-md-4">
-	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Nombre <span class="required">*</span></label>
-	                                            <input id="txt_nombreresposable" name="txt_nombreresposable"  type="text">
-	                                         </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <label  for="name">Nombre <span class="required">*</span></label>
+                                                <input id="txt_nombreresposable" name="txt_nombreresposable"  type="text">
+                                             </div>
                                       </div>
 
                                       <div class="col-md-4">
@@ -267,10 +209,10 @@
 
                       <div class="row">
                                       <div class="col-md-4">
-	                                        <div class="col-md-6 col-sm-6 col-xs-12">
-	                                            <label  for="name">Dirección<span class="required">*</span></label>
-	                                            <input id="txt_direccion" name="txt_direccion"  type="text">
-	                                         </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <label  for="name">Dirección<span class="required">*</span></label>
+                                                <input id="txt_direccion" name="txt_direccion"  type="text">
+                                             </div>
                                       </div>
                                    
                        </div>

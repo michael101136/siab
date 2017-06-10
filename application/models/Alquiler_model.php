@@ -11,7 +11,7 @@ function get_alquiler(){
             return $alquiler->result();
         } else 
         {
-            return false;
+            return null;
         }
 	}
 function Get_categoria(){

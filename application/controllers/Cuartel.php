@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cuartel extends CI_Controller {
 	public function __construct(){
       parent::__construct();
+      $this->load->model("Alquiler_model");
 	}
 	public function index()
 	{
@@ -13,7 +14,7 @@ class Cuartel extends CI_Controller {
   {
     if ($this->input->is_ajax_request()) {
 
-      $datos = $this->Alquiler_model->get_alquiler();
+      $datos = $this->Cuartel_model->ListarCuartel();
       echo json_encode($datos);
       
     }
