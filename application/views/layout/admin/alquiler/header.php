@@ -27,7 +27,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="index.html">Joli Admin</a>
+                        <a href="index.html">SIAB</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -158,7 +158,7 @@
                         </ul>
                     </li>
                     <li class="xn-openable active">
-                        <a href="tables.html"><span class="fa fa-table"></span> <span class="xn-text">Tables</span></a>
+                        <a href="tables.html"><span class="fa fa-table"></span> <span class="xn-text">Alquiler</span></a>
                         <ul>                            
                             <li><a href="table-basic.html"><span class="fa fa-align-justify"></span> Basic</a></li>
                             <li><a href="table-datatables.html"><span class="fa fa-sort-alpha-desc"></span> Data Tables</a></li>
